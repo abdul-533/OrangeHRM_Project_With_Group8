@@ -15,12 +15,15 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "")
     public WebElement xxxx;
 
+    @FindBy(xpath = "//span[text()='Admin']")
+    public WebElement admin;
+
 
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
-            case "xxxx":
-                return xxxx;
+            case "admin":
+                return admin;
 
         }
 
