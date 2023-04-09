@@ -51,6 +51,16 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath="//mat-form-field//input[@data-placeholder='Name']")
     public WebElement searchInput;
+
+    @FindBy(xpath = "//input[@placeholder='Type for hints...']")
+    public WebElement employeeName;
+
+    @FindBy(xpath = "//div[text()='No Records Found']")
+    public WebElement noRecords;
+
+    @FindBy(xpath = "//span[text()='Invalid']")
+    public WebElement invalid;
+
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
