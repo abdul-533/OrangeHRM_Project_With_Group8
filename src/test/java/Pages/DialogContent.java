@@ -28,8 +28,17 @@ public class DialogContent extends Parent {
     private WebElement loginSuccess;
 
 
-    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']") //
-    public WebElement searchInput;
+    @FindBy(xpath="//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+    public WebElement addButton;
+
+    @FindBy(xpath="(//input[@class='oxd-input oxd-input--active'])[3]")
+    public WebElement passInput;
+
+    @FindBy(xpath="(//input[@type='password'])[2]")
+    public WebElement passconfirmInput;
 
     @FindBy(xpath = "//ms-search-button//button")//
     public WebElement searchButton;
@@ -40,7 +49,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@type='submit']")//
     public WebElement deleteDialogBtn;
 
-
+    @FindBy(xpath="//mat-form-field//input[@data-placeholder='Name']")
+    public WebElement searchInput;
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
@@ -52,6 +62,8 @@ public class DialogContent extends Parent {
                 return loginBTN;
             case "loginSuccess":
                 return loginSuccess;
+            case "addButton":
+                return addButton;
 
         }
 
