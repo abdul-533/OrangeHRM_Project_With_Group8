@@ -13,6 +13,7 @@ public class _01_LoginSteps {
     @Given("Navigate to OrangeHRM")
     public void navigateToOrangeHRM() {
         GWD.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        GWD.getDriver().manage().window().maximize();
     }
 
     @When("Enter valid username  as {string} and password as {string} and click login button")

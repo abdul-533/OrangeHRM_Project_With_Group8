@@ -4,8 +4,11 @@ import Utilities.GWD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 
 // POM : Page Object Model
 public class DialogContent extends Parent {
@@ -27,18 +30,38 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
     private WebElement loginSuccess;
 
+//    @FindBy(xpath = "//div[@class='oxd-select-wrapper']")//
+//    private WebElement userRole;
+//
+//    @FindBy(xpath = "(//div[@class='oxd-select-wrapper'])[2]")//
+//    private WebElement status;
+//
+//    @FindBy(xpath = "//div[@class='oxd-autocomplete-wrapper']")//
+//    private WebElement employeeName;
+//
+//    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")//
+//    private WebElement userNameInput;
+//
+//    @FindBy(xpath = "//input[@type='password']")//
+//    private WebElement passwordInput;
+//
+//    @FindBy(xpath = "(//input[@type='password'])[2]")//
+//    private WebElement confirmPasswordInput;
+//
+//    @FindBy(xpath = "//button[text()=' Cancel ']")//
+//    private WebElement cancelBtn;
 
-    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']") //
-    public WebElement searchInput;
+    @FindBy(xpath = "//button[text()=' Save ']")//
+    private WebElement saveBtn;
 
-    @FindBy(xpath = "//ms-search-button//button")//
-    public WebElement searchButton;
+    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']//i")//
+    private WebElement addBtn;
 
-    @FindBy(xpath = "(//ms-delete-button//button)[1]")//
-    public WebElement deleteImageBtn;
+    @FindBy(xpath = "//*[contains(@class, 'oxd-form')]")//
+    public List<WebElement> elements;
 
-    @FindBy(xpath = "//button[@type='submit']")//
-    public WebElement deleteDialogBtn;
+    @FindBy(xpath = "//span[text()='Required']")//
+    public List<WebElement> required;
 
 
     public WebElement getWebElement(String strButton) {
@@ -52,6 +75,24 @@ public class DialogContent extends Parent {
                 return loginBTN;
             case "loginSuccess":
                 return loginSuccess;
+            case "userRole":
+//                return userRole;
+//            case "status":
+//                return status;
+//            case "employeeName":
+//                return employeeName;
+//            case "userNameInput":
+//                return userNameInput;
+//            case "passwordInput":
+//                return passwordInput;
+//            case "confirmPasswordInput":
+//                return confirmPasswordInput;
+//            case "saveBtn":
+//                return saveBtn;
+//            case "cancelBtn":
+//                return cancelBtn;
+            case "addBtn":
+                return addBtn;
 
         }
 
@@ -59,12 +100,4 @@ public class DialogContent extends Parent {
     }
 
 
-    public void deleteItem(String searchText) {
-        sendKeysFunction(searchInput, searchText);
-        clickFunction(searchButton);
-        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
-
-        clickFunction(deleteImageBtn);
-        clickFunction(deleteDialogBtn);
-    }
 }

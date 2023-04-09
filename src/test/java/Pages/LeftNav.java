@@ -12,15 +12,15 @@ public class LeftNav extends Parent {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(xpath = "")
-    public WebElement xxxx;
+    @FindBy(xpath = "//a[@href='/web/index.php/admin/viewAdminModule']")
+    private WebElement admin;
 
 
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
-            case "xxxx":
-                return xxxx;
+            case "admin":
+                return admin;
 
         }
 
