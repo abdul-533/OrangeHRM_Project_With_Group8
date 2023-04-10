@@ -21,7 +21,7 @@ public class _11_Notification_MessagesSteps {
     @When("Click ADD button and enter the less password")
     public void clickADDButtonAndEnterTheLessPassword() {
         dc.clickFunction(dc.addButton);
-        dc.sendKeysFunction(dc.addPassword, "1234");
+        dc.sendKeysFunction(dc.passwordAdd, "1234");
     }
 
     @Then("The error message should be displayed")
