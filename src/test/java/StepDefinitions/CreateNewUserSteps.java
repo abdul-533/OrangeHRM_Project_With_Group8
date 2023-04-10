@@ -24,17 +24,11 @@ public class CreateNewUserSteps {
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(),Duration.ofSeconds(5));
 
 
-    @Given("Navigate to OrangeHRM")
-    public void navigateToOrangeHRM() {
-        GWD.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
-    }
-
     @When("Login as default informations")
     public void loginAsDefaultInformations() {
         dc.sendKeysFunction(dc.getWebElement("userName"), "Admin");
         dc.sendKeysFunction(dc.getWebElement("password"), "admin123");
-        dc.clickFunction(dc.getWebElement("loginBTN"));
+        dc.clickFunction(dc.getWebElement("login"));
 
     }
 

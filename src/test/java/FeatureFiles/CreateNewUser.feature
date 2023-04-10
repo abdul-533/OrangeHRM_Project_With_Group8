@@ -1,4 +1,5 @@
 Feature: Creating a New User Functionality
+
   Scenario: User will create a new user and check the username and password is valid
     Given Navigate to OrangeHRM
     When Login as default informations
