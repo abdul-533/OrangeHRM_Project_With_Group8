@@ -12,8 +12,8 @@ public class Hooks {
     public void after(Scenario senaryo){
         System.out.println("Senaryo bitti");
 
-        ExcelUtility.writeExcel("src/test/java/ApachePOI/Resource/ScenarioStatus.xlsx",
-                senaryo, GWD.threadBrowserGet());
+        //ExcelUtility.writeExcel("src/test/java/ApachePOI/Resource/ScenarioStatus.xlsx",
+             //   senaryo, GWD.threadBrowserGet());
 
         if (senaryo.isFailed()){
             // extend report da çalışan kısım
