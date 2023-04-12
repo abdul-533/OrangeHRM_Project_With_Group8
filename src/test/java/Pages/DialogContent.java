@@ -86,6 +86,9 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//h6[text()='Add User']")
     public WebElement addUser;
+
+    @FindBy(xpath = "(//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message'])[2]")
+    public WebElement redText;
     public WebElement getWebElement(String strButton) {
 
         switch (strButton) {
