@@ -12,8 +12,8 @@ public class LeftNav extends Parent {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[@href='/web/index.php/admin/viewAdminModule']")
-    private WebElement admin;
+//    @FindBy(xpath = "//a[@href='/web/index.php/admin/viewAdminModule']")
+//    private WebElement admin;
 
     @FindBy(xpath = "//span[text()='Admin']")
     public WebElement admin;

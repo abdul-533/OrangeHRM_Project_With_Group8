@@ -129,6 +129,10 @@ public class DialogContent extends Parent {
             case "userRole":
             case "addBtn":
                 return addBtn;
+            case "saveBtn":
+                return saveBtn;
+
+
 
         }
 

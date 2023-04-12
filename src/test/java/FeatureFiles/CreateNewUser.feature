@@ -1,8 +1,11 @@
 Feature: Creating a New User Functionality
 
-  Scenario: User will create a new user and check the username and password is valid
+  Background:
     Given Navigate to OrangeHRM
-    When Login as default informations
+    When Enter valid username  as "Admin" and password as "admin123" and click login button
+    Then User should login successfully
+
+  Scenario: User will create a new user and check the username and password is valid
     And Click on the Admin from leftnav
     And Click add button and fill in the informations
     And Click Save button

@@ -24,13 +24,13 @@ public class CreateNewUserSteps {
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(),Duration.ofSeconds(5));
 
 
-    @When("Login as default informations")
-    public void loginAsDefaultInformations() {
-        dc.sendKeysFunction(dc.getWebElement("userName"), "Admin");
-        dc.sendKeysFunction(dc.getWebElement("password"), "admin123");
-        dc.clickFunction(dc.getWebElement("login"));
+//    @When("Login as default informations")
+//    public void loginAsDefaultInformations() {
+//        dc.sendKeysFunction(dc.getWebElement("userName"), "Admin");
+//        dc.sendKeysFunction(dc.getWebElement("password"), "admin123");
+//        dc.clickFunction(dc.getWebElement("login"));
 
-    }
+   // }
 
     @And("Click on the Admin from leftnav")
     public void clickOnTheAdminFromLeftnav() {
@@ -39,7 +39,7 @@ public class CreateNewUserSteps {
 
     @And("Click add button and fill in the informations")
     public void clickAddButtonAndFillInTheInformations() {
-        dc.clickFunction(dc.addBtn);
+        dc.clickFunction(dc.getWebElement("addBtn"));
 
 
         dc.clickFunction(dc.userRole);
@@ -77,8 +77,8 @@ public class CreateNewUserSteps {
 
     @And("Click Save button")
     public void clickSaveButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(dc.saveBtn));
-        dc.clickFunction(dc.saveBtn);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.getWebElement("saveBtn")));
+        dc.clickFunction(dc.getWebElement("saveBtn"));
     }
 
     @Then("Verify the new user is in the list")

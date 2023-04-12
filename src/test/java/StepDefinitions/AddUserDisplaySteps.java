@@ -16,13 +16,13 @@ public class AddUserDisplaySteps {
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
     @And("Click on Add button")
     public void clickOnAddButton() {
-        dc.clickFunction(dc.addBtn);
+        dc.clickFunction(dc.getWebElement("addBtn"));
     }
 
     @Then("Check add user is displayed")
     public void checkAddUserIsDisplayed() {
         wait.until(ExpectedConditions.urlToBe("https://opensource-demo.orangehrmlive.com/web/index.php/admin/saveSystemUser"));
-        wait.until(ExpectedConditions.elementToBeClickable(dc.saveBtn));
+        wait.until(ExpectedConditions.elementToBeClickable(dc.getWebElement("saveBtn")));
         Assert.assertTrue(dc.addUser.isDisplayed());
     }
 }

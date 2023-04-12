@@ -13,10 +13,6 @@ public class _11_Notification_MessagesSteps {
     LeftNav ln = new LeftNav();
 
 
-    @And("Navigate to admin page")
-    public void navigateToAdminPage() {
-        ln.clickFunction(ln.admin);
-    }
 
     @When("Click ADD button and enter the less password")
     public void clickADDButtonAndEnterTheLessPassword() {
