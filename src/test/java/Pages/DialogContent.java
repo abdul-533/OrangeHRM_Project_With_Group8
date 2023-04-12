@@ -70,8 +70,7 @@ public class DialogContent extends Parent {
     public WebElement userRole;
     @FindBy(xpath = "(//div[@tabindex='0'])[2]")
     public WebElement Status;
-    @FindBy(xpath = "//input[@placeholder='Type for hints...']")
-    public WebElement employeeName;
+
     @FindBy(xpath = "(//input[@autocomplete='off'])[1]")
     public WebElement usernameAdd;
     @FindBy(xpath = "(//input[@autocomplete='off'])[2]")
