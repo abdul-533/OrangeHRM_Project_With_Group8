@@ -4,8 +4,13 @@ import Utilities.GWD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
+
+import java.util.List;
 
 // POM : Page Object Model
 public class DialogContent extends Parent {
@@ -27,6 +32,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
     private WebElement loginSuccess;
 
+    @FindBy(xpath = "//button[text()=' Save ']")//
+    private WebElement saveBtn;
 
     @FindBy(xpath="//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     public WebElement errorMessage;
@@ -39,15 +46,25 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath="(//input[@type='password'])[2]")
     public WebElement passconfirmInput;
+    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']//i")//
+    private WebElement addBtn;
 
     @FindBy(xpath = "//ms-search-button//button")//
     public WebElement searchButton;
 
     @FindBy(xpath = "(//ms-delete-button//button)[1]")//
     public WebElement deleteImageBtn;
-
     @FindBy(xpath = "//button[@type='submit']")//
     public WebElement deleteDialogBtn;
+
+    @FindBy(xpath = "//*[contains(@class, 'oxd-form')]")//
+    public List<WebElement> elements;
+
+    @FindBy(xpath = "//span[text()='Required']")//
+    public List<WebElement> required;
+
+
+
 
     @FindBy(xpath="//mat-form-field//input[@data-placeholder='Name']")
     public WebElement searchInput;
@@ -61,8 +78,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Invalid']")
     public WebElement invalid;
 
-    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
-    public WebElement addBtn;
+//    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+//    public WebElement addBtn;
     @FindBy(xpath = "(//div[@tabindex='0'])[1]")
     //(//div[@tabindex='0'])[1]
     //(//div[@class='oxd-select-text-input'])[1]
@@ -77,8 +94,8 @@ public class DialogContent extends Parent {
     public WebElement passwordAdd;
     @FindBy(xpath = "(//input[@autocomplete='off'])[3]")
     public WebElement passwordAddConfirm;
-    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
-    public WebElement saveBtn;
+//    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
+//    public WebElement saveBtn;
     @FindBy(xpath = "(//div[@class='oxd-select-text oxd-select-text--active'])[1]//div")
     public WebElement Ess;
     @FindBy(xpath = "//div[@role='listbox']")
@@ -109,6 +126,9 @@ public class DialogContent extends Parent {
                 return loginSuccess;
             case "addButton":
                 return addButton;
+            case "userRole":
+            case "addBtn":
+                return addBtn;
 
         }
 
