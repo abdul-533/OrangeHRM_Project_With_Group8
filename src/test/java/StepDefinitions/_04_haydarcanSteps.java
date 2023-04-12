@@ -21,10 +21,14 @@ public class _04_haydarcanSteps {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
+    String randomUsername= RandomString.make(8);
 
-    @And("Verify contains Text")
+    @And("enter a value in to the username which was already taken")
     public void clickAddButtonAndFillInTheInformations() {
-
+        dc.clickFunction(dc.userRole);
+        dc.sendKeysFunction(dc.employeeName, "P");
+        dc.clickFunction(dc.listbox);
+        dc.sendKeysFunction(dc.usernameAdd, randomUsername);
 
         dc.sendKeysFunction(dc.passwordAdd, "Cacik3535.");
 

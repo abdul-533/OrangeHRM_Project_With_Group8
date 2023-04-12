@@ -11,6 +11,6 @@ Feature:  Verifying mandatory field notification messages
   Scenario: Verify that "Already exists" notification messages are displayed in red.
 
 
-    And Verify contains Text
+    And enter a value in to the username which was already taken
 
     Then Verify Already Exists in red color message
