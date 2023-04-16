@@ -7,10 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import java.util.List;
 
 import java.util.List;
+import java.util.TreeMap;
 
 // POM : Page Object Model
 public class DialogContent extends Parent {
@@ -35,16 +37,16 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[text()=' Save ']")//
     private WebElement saveBtn;
 
-    @FindBy(xpath="//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     public WebElement errorMessage;
 
-    @FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
     public WebElement addButton;
 
-    @FindBy(xpath="(//input[@class='oxd-input oxd-input--active'])[3]")
+    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[3]")
     public WebElement passInput;
 
-    @FindBy(xpath="(//input[@type='password'])[2]")
+    @FindBy(xpath = "(//input[@type='password'])[2]")
     public WebElement passconfirmInput;
     @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']//i")//
     private WebElement addBtn;
@@ -64,9 +66,7 @@ public class DialogContent extends Parent {
     public List<WebElement> required;
 
 
-
-
-    @FindBy(xpath="//mat-form-field//input[@data-placeholder='Name']")
+    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']")
     public WebElement searchInput;
 
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
@@ -78,7 +78,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Invalid']")
     public WebElement invalid;
 
-//    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+    //    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
 //    public WebElement addBtn;
     @FindBy(xpath = "(//div[@tabindex='0'])[1]")
     //(//div[@tabindex='0'])[1]
@@ -94,7 +94,7 @@ public class DialogContent extends Parent {
     public WebElement passwordAdd;
     @FindBy(xpath = "(//input[@autocomplete='off'])[3]")
     public WebElement passwordAddConfirm;
-//    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
+    //    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
 //    public WebElement saveBtn;
     @FindBy(xpath = "(//div[@class='oxd-select-text oxd-select-text--active'])[1]//div")
     public WebElement Ess;
@@ -133,7 +133,6 @@ public class DialogContent extends Parent {
                 return saveBtn;
 
 
-
         }
 
         return null;
@@ -147,5 +146,17 @@ public class DialogContent extends Parent {
 
         clickFunction(deleteImageBtn);
         clickFunction(deleteDialogBtn);
+    }
+
+    public void elementIsDisplayed(WebElement elemet) {
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+        }
+
+        Assert.assertTrue(elemet.isDisplayed(), "Element isn't displayed!");
+
+
     }
 }
